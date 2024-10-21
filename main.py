@@ -137,12 +137,14 @@ class Assignments():
                         self.__init__()
                     try:
                         self.fullNameFilled = False
+                        self.fullOldName = ''
                         for key in self.assignments_dict.keys():
                             if key.startswith(oldName) and not self.fullNameFilled:
                                 self.fullOldName = key
                                 self.fullNameFilled = True
                             elif key.startswith(oldName) and self.fullNameFilled:
                                 raise Exception()
+                        self.assignments_dict[self.fullOldName]
 
                     except KeyError:
                         print("\nEnter a real assignment.\n")
